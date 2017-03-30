@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+    <navigation-rule>
+    	<from-view-id>/cadastraUsuario.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-action>#{usuarioBean.salva}</from-action>
+    		<from-outcome>mostraUsuario</from-outcome>
+    		<to-view-id>/mostraUsuario.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    	
+     <navigation-rule>
+    	<from-view-id>/mostraUsuario.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>cadastraUsuario</from-outcome>
+    		<to-view-id>/cadastraUsuario.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    	
+    <navigation-rule>
+    	<from-view-id>/login.xhtml</from-view-id>
+    	<navigation-case>
+    	    <from-action>#{usuarioBean.logar}</from-action>
+    	    <from-outcome>mostraUsuario</from-outcome>
+    	    <to-view-id>/mostraUsuario.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    	    	
+    <navigation-rule>
+    	<from-view-id>/mostraUsuario.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>login</from-outcome>
+    		<to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    	
+</faces-config>

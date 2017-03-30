@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastrar Usuario</title>
+</head>
+<h:body>
+	<h:form>
+	
+		<fieldset>
+			<legend>Cadastrar Usuário</legend>
+			<h:panelGrid columns="2">
+				
+				<h:outputLabel value="Nome:" for="nome"/>
+				<h:inputText id="nome" value="#{usuarioBean.nome}" required="true" requiredMessage="Informe o Nome"/>
+				<h:outputLabel value="E-mail:" for="email"/>
+				<h:inputText id="email" value="#{usuarioBean.email}" required="true" requiredMessage="Informe seu E-mail"/>
+				<h:outputLabel value="Senha:" for="senha"/>
+				<h:inputSecret id="senha" value="#{usuarioBean.senha}" required="true" requiredMessage="Informe a senha." maxlength="11"/>
+				<h:outputLabel value="Confirme a Senha:" for="confirmaSenha"/>
+				<h:inputSecret id="confirmaSenha" value="#{usuarioBean.confirmaSenha}" required="true" requiredMessage="Confirme a senha." maxlength="11"/>
+				
+				<h:commandButton action="#{usuarioBean.salvar}" value="Enviar" />
+			</h:panelGrid>
+			<h:messages style="color:red"/>
+		</fieldset >
+	
+
+	</h:form>
+
+
+
+</h:body>
+</html>
